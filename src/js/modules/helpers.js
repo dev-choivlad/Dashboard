@@ -1,22 +1,15 @@
-const navMenu = {
-	burgerButtonHandler: () => {
-		const burgerBtn = document.querySelector(".burger-button");
-		const navMenuList = document.querySelector(".nav-menu");
+const sideBarMenu = {
+	sideBarBtnHandler: () => {
 		const body = document.body;
+		const sideBar = document.querySelector(".main-sidebar");
+		const sideBarBtn = document.querySelector(".main-sidebar__btn");
+		const display = document.querySelector(".main-display")
 
-		burgerBtn.addEventListener("click", () => {
-			if (burgerBtn.classList.contains("burger-button--open")) {
-				burgerBtn.classList.toggle("burger-button--close");
-				body.classList.toggle("lock");
-			}
-			else {
-				burgerBtn.classList.add("burger-button--open");
-				body.classList.toggle("lock")
-			}
-
-			navMenuList.classList.toggle("nav-menu--active")
+		sideBarBtn.addEventListener("click", (e) => {
+			e.preventDefault();
+			body.classList.toggle("main-sidebar--opened")
 		})
 	},
 }
 
-export const burgerButtonHandler = navMenu.burgerButtonHandler;
+export const sideBarBtnHandler = sideBarMenu.sideBarBtnHandler;

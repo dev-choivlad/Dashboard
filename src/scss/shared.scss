@@ -1,17 +1,71 @@
-html	{
-	font-family: OpenSans, sans-serif;
+html {
+	font-family: Inter, sans-serif;
 }
 
-.main-content {
+.main-container {
+	display: flex;
 	width: 100%;
 	height: 100vh;
 	overflow: auto;
 }
 
-main-section {}
+main-display {}
+
+.feather {
+	width: 24px;
+	height: 24px;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+.img-basic {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+	margin: 0 auto;
+}
+
+.h1-fs {
+	@include adaptive-font(32, 24);
+}
+
+.h2-fs {
+	@include adaptive-font(30, 22);
+}
+
+.sidebar-item-name-fs {
+	@include adaptive-font(14, 11);
+}
+
+.text-primary-fs {
+	@include adaptive-font(16, 13);
+}
+
+.text-secondary-fs {
+	@include adaptive-font(12, 11);
+}
+
 
 @media screen and (max-width: 768px) {
 	body.lock {
 		overflow: hidden;
+	}
+}
+
+@media screen and (min-width: 1471px) {
+	.h1-fs {
+		font-size: 32px;
+	}
+	.h2-fs {
+		font-size: 30px;
+	}
+	.text-primary-fs {
+		font-size: 16px;
+	}
+	.sidebar-item-name-fs {
+		font-size: 14px;
 	}
 }
