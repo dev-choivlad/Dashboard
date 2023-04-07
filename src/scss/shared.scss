@@ -1,0 +1,17 @@
+html	{
+	font-family: OpenSans, sans-serif;
+}
+
+.main-content {
+	width: 100%;
+	height: 100vh;
+	overflow: auto;
+}
+
+main-section {}
+
+@media screen and (max-width: 768px) {
+	body.lock {
+		overflow: hidden;
+	}
+}
