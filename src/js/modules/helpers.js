@@ -7,7 +7,7 @@ const sideBarMenu = {
 
 		sideBarBtn.addEventListener("click", (e) => {
 			e.preventDefault();
-			body.classList.toggle("main-sidebar--opened")
+			body.classList.toggle("main-sidebar--closed")
 		})
 	},
 }

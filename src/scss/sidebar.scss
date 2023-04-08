@@ -1,11 +1,18 @@
 .main-sidebar {
 	display: flex;
 	flex-direction: column;
-	background-color: $color-sidebar;
-	min-width: 230px;
+	min-width: initial;
+	width: 300px;
 	height: 100%;
+	background-color: $color-sidebar;
+	-webkit-box-shadow: 6px 1px 13px -7px rgba(49,50,176,0.46);
+	box-shadow: 6px 1px 13px -7px rgba(49,50,176,0.46);
+	overflow-y: auto;
+
+	transition: all .2s linear;
 }
 .main-sidebar__top {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -14,10 +21,16 @@
 
 	border-bottom: 1px solid $color-text-secondary;
 }
+
 .main-sidebar__logo {
 	text-transform: uppercase;
+	transition: all .1s linear .2s;
+	visibility: visible;
+	opacity: 1;
 }
+
 .main-sidebar__btn {
+	flex-shrink: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -79,9 +92,16 @@
 	max-width: 70px;
 	border-radius: 50%;
 	overflow: hidden;
+
+	z-index: 2;
+	transition: all .2s linear;
 }
 .profile__text {
-	padding: 10px;
+	padding: 10px 0 10px 10px;
+	width: auto;
+
+	z-index: 1;
+	transition: all .2s linear .4s;
 }
 .profile__name,
 .profile__role {
@@ -95,4 +115,64 @@
 }
 .profile__role {
 	font-weight: 300;
+}
+
+/* When sidebar is closed */
+
+.main-sidebar--closed {
+	.main-sidebar {
+		min-width: initial;
+		width: 55px;
+	}
+
+	.main-sidebar__top {
+		flex-direction: column;
+		justify-content: center;
+		height: 79px;
+		padding: 5px;
+	}
+
+	.main-sidebar__logo {
+		width: 0;
+		height: 0;
+		clip-path: inset(100%);
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(-200%);
+	}
+
+	.main-sidebar__btn {
+		align-self: center;
+	}
+
+	.main-nav__item {
+		display: grid;
+	}
+
+	.main-nav__link {
+		padding: 10px 0 10px 0;
+		margin: auto;
+	}
+
+	.link-name {
+		display: none;
+	}
+
+	.profile {
+		flex-direction: column;
+		padding: 10px 7px;
+	}
+
+	.profile__text {
+		width: 0;
+		height: 0;
+		clip-path: inset(100%);
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(-100%);
+	}
 }

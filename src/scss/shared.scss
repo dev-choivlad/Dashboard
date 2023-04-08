@@ -28,6 +28,19 @@ main-display {}
 	margin: 0 auto;
 }
 
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
 .h1-fs {
 	@include adaptive-font(32, 24);
 }
@@ -37,11 +50,11 @@ main-display {}
 }
 
 .sidebar-item-name-fs {
-	@include adaptive-font(14, 11);
+	@include adaptive-font(15, 13);
 }
 
 .text-primary-fs {
-	@include adaptive-font(16, 13);
+	@include adaptive-font(17, 13);
 }
 
 .text-secondary-fs {
@@ -63,9 +76,9 @@ main-display {}
 		font-size: 30px;
 	}
 	.text-primary-fs {
-		font-size: 16px;
+		font-size: 17px;
 	}
 	.sidebar-item-name-fs {
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
