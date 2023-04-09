@@ -21,3 +21,9 @@
 	left: 65px;
 	width: calc(100% - 65px);
 }
+
+@media screen and (max-height: 500px) {
+	.content-box__header {
+		height: 54px;
+	}
+}
