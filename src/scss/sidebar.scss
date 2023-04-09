@@ -11,24 +11,31 @@
 	transition: all .3s ease;
 }
 
-
 .sidebar__top {
-	display: flex;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 110px 110px;
+	transition: all .3s ease;
+	padding: $padding-desk;
+	border-bottom: 1px solid $color-sidebar-hover
+/*	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
 	padding: $padding-desk;
-	border-bottom: 1px solid $color-sidebar-hover;
+	border-bottom: 1px solid $color-sidebar-hover;*/
 }
 .sidebar__logo {
+	justify-self: start;
 	transition: all .3s ease .2s;
 }
 .sidebar__btn {
+	justify-self: end;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	min-width: 45px;
-	padding: 7px;
+	justify-content: flex-end;
+	width: 45px;
+	padding: 6px;
 	color: $color-sidebar-text;
 	border-radius: $border-radius;
 	background: $color-sidebar-hover;
@@ -59,6 +66,7 @@
 .nav-menu__link {
 	display: flex;
 	align-items: center;
+	height: 40px;
 	padding: $padding-mob;
 	color: $color-sidebar-text;
 	opacity: .6;
@@ -91,11 +99,6 @@
 }
 .link-name {
 }
-
-.nav-menu__hint {
-	display: none;
-}
-
 .sidebar__bot {
 	position: fixed;
 	bottom: 0;
@@ -105,12 +108,14 @@
 	}
 }
 .profile {
-	display: flex;
+	display: grid;
 	align-items: center;
-	justify-content: space-between;
+	grid-template-columns: 80px 130px;
+	transition: all .3s ease;
 	padding: $padding-desk;
 }
 .profile__img {
+	justify-self: start;
 	height: 55px;
 	width: 55px;
 	min-width: 55px;
@@ -127,6 +132,7 @@
 	}
 }
 .profile__desc {
+	justify-self: start;
 	transition: all .3s ease;
 	z-index: 1;
 	span {
@@ -151,8 +157,12 @@
 .sidebar.sidebar--closed {
 	width: 65px;
 	.sidebar__top {
-		padding: 10px;
-		height: 84px;
+		grid-template-columns: 0 auto;
+		padding: 20px 10px;
+	}
+
+	.sidebar__btn {
+		justify-self: center;
 	}
 
 	.sidebar__logo {
@@ -167,16 +177,16 @@
 	}
 	.nav-menu__link:hover {
 		.link-name {
+			display: block;
 			@include centering-y;
 			opacity: 1;
 			visibility: visible;
 		}
 	}
 	.link-name {
-		display: block;
+		display: none;
 		position: absolute;
 		left: 120%;
-		top: 20px;
 		font-size: 12px;
 		padding: 6px;
 		border-radius: $border-radius-6;
@@ -203,11 +213,13 @@
 	}
 
 	.profile {
-		display: flex;
-		justify-content: center;
+		grid-template-columns: 1fr;
+		padding: 20px 5px;
+		//transition: all .3s ease .2s;
 	}
 
 	.profile__img {
+		justify-self: center;
 		margin-right: 0;
 	}
 
@@ -220,5 +232,6 @@
 		visibility: hidden;
 		opacity: 0;
 		transform: translateX(-70%);
+
 	}
 }
