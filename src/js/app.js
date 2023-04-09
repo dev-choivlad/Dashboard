@@ -1,6 +1,7 @@
 import * as flsFunctions from "./modules/check-webp.js";
-import { sideBarBtnHandler } from "./modules/helpers.js";
+import { sidebarBtnHandler, menuItemClickHandler } from "./modules/helpers.js";
 
 
 flsFunctions.isWebp();
-sideBarBtnHandler();
+sidebarBtnHandler();
+menuItemClickHandler();

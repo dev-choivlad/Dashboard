@@ -1,0 +1,23 @@
+.content-box {
+	position: relative;
+	left: 260px;
+	width: calc(100% - 260px);
+	height: 100vh;
+	background-color: lighten($color-bg-display, 7);
+	color: $color-text-primary;
+
+	transition: all .5s ease;
+}
+
+.content-box__header {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid $color-sidebar-hover;
+	height: 85px;
+	padding: 0 20px;
+}
+
+.sidebar.sidebar--closed ~ .content-box {
+	left: 65px;
+	width: calc(100% - 65px);
+}
