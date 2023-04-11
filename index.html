@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<link rel="stylesheet" href="css/style.min.css?_v=20230408210237">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230411053835">
 </head>
 <body>
 
@@ -64,7 +64,7 @@
 								</svg>
 							</span>
 
-							<span class="link-name text-sm-fs">
+							<span class="link-name text-sm-fs ellipsis">
 								Notifications
 							</span>
 						</a>
@@ -162,12 +162,285 @@
 	</div>
 
 	<main class="content-box">
-		<header class="content-box__header">
-			<h2 class="h2-fs">This is Dashboard!</h2>
+		<header class="header">
+			<h2 class="h2-fs">Dashboard</h2>
+
+			<div class="header__date"></div>
+
+			<div class="header__mail">
+				<span>
+					<svg class="feather">
+						<use href="img/feather-sprite.svg#mail"/>
+					</svg>
+				</span>
+			</div>
 		</header>
+
+		<section class="charts"> <!-- here -->
+			<div class="charts-sm">
+				<div class="sm-card">
+					<div class="sm-card__left">
+						<span class="sm-card__icon sm-card__icon--blue">
+							<svg class="feather">
+								<use href="img/feather-sprite.svg#dribbble"/>
+							</svg>
+						</span>
+					</div>
+
+					<div class="sm-card__right ">
+						<div class="sm-card__heading">
+							<h4 class="text-md-fs">Workouts</h4>
+						</div>
+
+						<div class="sm-card__info text-xs-fs">
+							<div class="sm-card__text">
+								<span>This week:</span> <span>3</span>
+							</div>
+
+							<div class="sm-card__text">
+								<span>Last week:</span> <span>5</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="sm-card">
+					<div class="sm-card__left">
+						<span class="sm-card__icon sm-card__icon--pink">
+							<svg class="feather">
+								<use href="img/feather-sprite.svg#activity"/>
+							</svg>
+						</span>
+					</div>
+
+					<div class="sm-card__right">
+						<div class="sm-card__heading">
+							<h4 class="text-md-fs">Stress level</h4>
+						</div>
+
+						<div class="sm-card__info text-xs-fs">
+							<div class="sm-card__text">
+								<span>This week:</span> <span>55%</span>
+							</div>
+
+							<div class="sm-card__text">
+								<span>Last week:</span> <span>68%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="sm-card">
+					<div class="sm-card__left">
+						<span class="sm-card__icon sm-card__icon--green">
+							<svg class="feather">
+								<use href="img/feather-sprite.svg#battery-charging"/>
+							</svg>
+						</span>
+					</div>
+
+					<div class="sm-card__right">
+						<div class="sm-card__heading">
+							<h4 class="text-md-fs">Body battery</h4>
+						</div>
+
+						<div class="sm-card__info text-xs-fs">
+							<div class="sm-card__text">
+								<span>This week:</span> <span>91%</span>
+							</div>
+
+							<div class="sm-card__text">
+								<span>Last week:</span> <span>70%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="sm-card">
+					<div class="sm-card__left">
+						<span class="sm-card__icon sm-card__icon--purple">
+							<svg class="feather">
+								<use href="img/feather-sprite.svg#moon"/>
+							</svg>
+						</span>
+					</div>
+
+					<div class="sm-card__right">
+						<div class="sm-card__heading">
+							<h4 class="text-md-fs">Sleep</h4>
+						</div>
+
+						<div class="sm-card__info text-xs-fs">
+							<div class="sm-card__text">
+								<span>This week:</span> <span>40h</span>
+							</div>
+
+							<div class="sm-card__text">
+								<span>Last week:</span> <span>56h</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="charts-md">
+				<div class="md-card">
+					<div class="md-card__top">
+						<div class="pie-chart animate"
+								 style="--percentage:90;
+								 --color:#bab4ff">
+							90%!
+						</div>
+					</div>
+
+					<div class="md-card__bot md-card__bot--steps">
+						<h4 class="text-md-fs">Steps</h4>
+
+						<div class="md-card__social">
+							<div class="social-left">
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#twitter"/>
+									</svg>
+							</a>
+
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#facebook"/>
+									</svg>
+								</>
+
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#instagram"/>
+									</svg>
+								</a>
+							</div>
+
+							<div class="social-right">
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#user-plus"/>
+									</svg>
+								</a>
+							</div>
+						</div>
+
+						<div class="md-card__recom">
+							<span>Get a Tip!</span>
+							<p class="text-xs-fs">
+								There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="md-card">
+					<div class="md-card__top">
+						<div class="pie-chart animate"
+								 style="--percentage:88;
+								 --color:#64e763">
+							88%
+						</div>
+					</div>
+
+					<div class="md-card__bot md-card__bot--activity">
+						<h4 class="text-md-fs">Day Activity</h4>
+
+						<div class="md-card__social">
+							<div class="social-left">
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#twitter"/>
+									</svg>
+								</a>
+
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#facebook"/>
+									</svg>
+								</>
+
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#instagram"/>
+									</svg>
+								</a>
+							</div>
+
+							<div class="social-right">
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#user-plus"/>
+									</svg>
+								</a>
+							</div>
+						</div>
+
+						<div class="md-card__recom">
+							<span>Get a Tip!</span>
+							<p class="text-xs-fs">
+								There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="md-card">
+					<div class="md-card__top">
+						<div class="pie-chart animate"
+								 style="--percentage:78;
+								 --color:#ffc995">
+							78%
+						</div>
+					</div>
+
+					<div class="md-card__bot md-card__bot--calories">
+						<h4 class="text-md-fs">Calories</h4>
+
+						<div class="md-card__social">
+							<div class="social-left">
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#twitter"/>
+									</svg>
+								</a>
+
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#facebook"/>
+									</svg>
+								</>
+
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#instagram"/>
+									</svg>
+								</a>
+							</div>
+
+							<div class="social-right">
+								<a href="##" class="md-card__icon">
+									<svg class="feather">
+										<use href="img/feather-sprite.svg#user-plus"/>
+									</svg>
+								</a>
+							</div>
+						</div>
+
+						<div class="md-card__recom">
+							<span>Get a Tip!</span>
+							<p class="text-xs-fs">
+								There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 </div>
 
-<script src="js/app.min.js?_v=20230408210237"></script>
+<script src="js/app.min.js?_v=20230411053835"></script>
 </body>
 </html>
