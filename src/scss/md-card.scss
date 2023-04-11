@@ -1,0 +1,213 @@
+.md-card {
+	max-width: 270px;
+	width: 100%;
+	flex-shrink: 0;
+	padding: 10px;
+	margin: 15px;
+}
+
+.md-card__top {
+	padding: 20px;
+}
+.md-card__top {
+	text-align: center;
+}
+.pie-chart {}
+
+.md-card__bot {
+	position: relative;
+	height: 210px;
+	padding-top: 30px;
+	overflow-y: hidden;
+	border-radius: $border-radius;
+
+	-webkit-box-shadow: 0px 0px 13px 3px rgba(119,119,119,0.33);
+	box-shadow: 0px 0px 13px 3px rgba(119,119,119,0.33);
+
+	h4 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	&--steps {
+		background-color: $color-card-2;
+
+		.md-card__social {
+			a {
+				background-color: darken($color-card-2, 6);
+
+				&:hover,
+				&:focus {
+					background-color: darken($color-card-2, 10);
+				}
+			}
+		}
+
+		.md-card__recom {
+			background-color: darken($color-card-2, 10);
+		}
+	}
+
+	&--calories {
+		background-color: $color-card-1;
+
+		.md-card__social {
+			a {
+				background-color: darken($color-card-1, 6);
+
+				&:hover,
+				&:focus {
+					background-color: darken($color-card-1, 10);
+				}
+			}
+		}
+
+		.md-card__recom {
+			background-color: darken($color-card-1, 10);
+		}
+	}
+
+	&--activity {
+		background-color: lighten($color-card-4, 9);
+
+		.md-card__social {
+			a {
+				background-color: darken($color-card-4, 6);
+
+				&:hover,
+				&:focus {
+					background-color: darken($color-card-4, 10);
+				}
+			}
+		}
+
+		.md-card__recom {
+			background-color: darken($color-card-4, 10);
+		}
+	}
+}
+
+.md-card__social,
+.md-card__recom {
+	padding: 10px 20px 20px;
+}
+
+.md-card__social {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		padding: 5px;
+		border-radius: 50%;
+
+		transition: all .3s ease;
+
+		.feather {
+			width: 18px;
+			color: $color-text-secondary;
+			transition: all .3s ease;
+		}
+		&:hover,
+		&:focus {
+			.feather {
+				color: white;
+			}
+		}
+	}
+}
+
+.social-left {
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+.social-right {
+	display: flex;
+	justify-content: flex-end;
+	width: 20%;
+}
+
+.md-card__recom {
+	position: absolute;
+	top: 70%;
+	color: white;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: $border-radius;
+	overflow-y: scroll;
+
+	transition: all .5s cubic-bezier(.22,.68,0,1.71);
+
+	&:hover {
+		top: 30%;
+	}
+
+	span {
+		font-weight: bold;
+	}
+	p {
+		margin-top: 5px;
+		padding-bottom: 30px;
+		line-height: 18px;
+	}
+}
+
+@property --percentage {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 1;
+}
+.pie-chart {
+	--percentage: 20;
+	--bold: 22px;
+	--color: lightgreen;
+	--width: 180px;
+
+	position: relative;
+	display: inline-grid;
+	width: var(--width);
+	aspect-ratio: 1;
+	place-content: center;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: sans-serif;
+	margin: 5px;
+}
+
+.pie-chart:before,
+.pie-chart:after {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+.pie-chart:before {
+	inset: 0;
+	background:
+				 radial-gradient(farthest-side,var(--color) 98%, #0000) top/var(--bold) var(--bold) no-repeat,
+				 conic-gradient(var(--color) calc(var(--percentage) * 1%), #0000 0);
+	-webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--bold)),#000 calc(100% - var(--bold)));
+	mask: radial-gradient(farthest-side,#0000 calc(99% - var(--bold)),#000 calc(100% - var(--bold)));
+}
+.pie-chart:after {
+	inset: calc(50% - var(--bold)/2);
+	background: var(--color);
+	transform: rotate(calc(var(--percentage)*3.6deg)) translateY(calc(50% - var(--width)/2));
+}
+.animate {
+	animation: piechartAnimation 1s .5s both;
+}
+.no-round:before {
+	background-size: 0 0, auto;
+}
+.no-round:after {
+	content: none;
+}
+@keyframes piechartAnimation {
+	from{--percentage:0}
+}
+

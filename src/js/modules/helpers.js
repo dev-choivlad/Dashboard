@@ -4,8 +4,6 @@ const sideBarMenu = {
 		const sideBar = document.querySelector(".sidebar");
 		const sideBarBtn = document.querySelector(".sidebar__btn");
 
-		console.log(sideBarBtn)
-
 		sideBarBtn.addEventListener("click", (e) => {
 			e.preventDefault();
 			sideBar.classList.toggle("sidebar--closed")
@@ -30,5 +28,16 @@ const sideBarMenu = {
 	}
 }
 
+const widgets = {
+	showDateAndTime: () => {
+		const dateTimeDiv = document.querySelector(".date-time")
+		let today = new Date().toLocaleString();
+		console.log(today);
+
+		dateTimeDiv.innerHTML = `<span>${today}</span>`
+	},
+}
+
 export const sidebarBtnHandler = sideBarMenu.sidebarBtnHandler;
 export const menuItemClickHandler = sideBarMenu.menuItemClickHandler;
+export const showDateAndTime = widgets.showDateAndTime;
